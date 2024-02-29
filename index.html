@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style> @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2e2e2e;
+            font-family: "Inter", sans-serif;
+            background-color: #fff;
+        }
+        
+        .wrapper {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            padding: 30px 0;
+            display: flex;
+        }
+        
+        .wrapper .screen {
+            min-width: 100%;
+            flex: 1;
+            transition: all 0.3s;
+        }
+        
+        
+        .wrapper.show-category .home-screen {
+            transform: translateX(-100%);
+        }
+        
+        .wrapper.show-category .category-screen {
+            transform: translateX(-100%);
+        }
+        
+        .wrapper.show-category .screen-backdrop {
+            transform: translate(-50%, -60%)
+        }
+        
+        .head-wrapper {
+            padding: 0 30px;
+        }
+        
+        .menu-btn {
+            cursor: pointer;
+            color: #2e2e2e;
+        }
+        
+        /*Textos*/
+        .tasks-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            margin-top: 250px;
+        }
+        .tasks h1{
+            font-size: 1.8rem;
+        }</style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Cria o Button-->
+        <div class="home-screen screen">
+            <div class="head-wrapper">
+                <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+          <!-- Finaliza o button-->
+          <!-- Cria o texto da proxima pagina-->
+          <div class="category-screen screen">
+            <div class="head-wrapper">
+                <div class="back-btn">
+                    <i class="fa-solid fa-arrow-left" style="font-size: 25px;"></i>
+                </div>
+            </div>
+              <div class="tasks-wrapper">
+                  <div class="tasks">
+                       <div class="task-wrapper">
+                           <label for="task" class="task">
+                              <h1>Bem vindo a minha Pagina</h1>
+                              <p>apartir daqui posso criar os  conteudos</p>
+                          </label>
+                      </div>
+                  </div>
+              </div>
+        </div> <!-- Cria o texto da proxima pagina-->
+    </div>
+<script>
+        
+const wrapper = document.querySelector(".wrapper");
+const backBtn = document.querySelector(".back-btn");
+const menuBtn = document.querySelector(".menu-btn");
+
+const toogleScreen = () => {
+  wrapper.classList.toggle("show-category");
+};
+
+menuBtn.addEventListener("click", toogleScreen);
+backBtn.addEventListener("click", toogleScreen);
+
+const addTask = document.querySelector(".menu-btn");
+      </script>
+</body>
+</html>
